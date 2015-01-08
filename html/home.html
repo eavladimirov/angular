@@ -9,14 +9,11 @@
 	<ul class="nav">
 				<li><a href="#/login">Login</a></li>
 				<li><a href="#/register">Register</a></li>
+				<li><a href="#" ng-click="rege()">Click</li>
 	</ul>
 	
 	<ul>
 		<li ng-repeat="ad in data.ads" class="well">
-		
-		
-		
-		
 			<a href="#/ads/{{ad.id}}">
 				<h1>{{ad.title}}</h1>
 				<div><strong>Text:</strong> {{ad.text}}</div>

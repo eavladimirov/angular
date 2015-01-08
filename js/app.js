@@ -30,12 +30,28 @@ app.controller('AllAds', function($scope, $http){
 		url: 'http://softuni-ads.azurewebsites.net/api/Ads' 
 	})
 	.success(function (data, status, headers, config) {
-		alert("OK");
-		console.log(data);
+		//alert("OK");
+		console.log(data["ads"]);
+		$scope.data = data;
 	})
 	.error(function (data, status, headers, config) {
 		alert("Error");
 	});
+	
+	
+	$scope.rege = function(){
+		$http({ 
+			method: 'GET', 
+			url: 'http://softuni-ads.azurewebsites.net/api/Ads?StartPage=4' 
+		})
+		.success(function (data, status, headers, config) {
+			
+			$scope.data = data;
+		})
+		.error(function (data, status, headers, config) {
+			alert("Error");
+		});
+	}
 });
 
 app.controller('Login', function($scope){
