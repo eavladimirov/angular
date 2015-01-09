@@ -1,5 +1,5 @@
 <div>	
-	<a href="#" ng-click="rege()">Click</a>
+	
 
 
 	<ul>
@@ -23,5 +23,9 @@
 				<tr>
 			</table>
 		</li>	
+	</ul>
+	
+	<ul>
+		<li ng-repeat="i in getNumber(numPages) track by $index"><a href="#" ng-click="pager($index+1)">{{$index+1}}</a></li>
 	</ul>
 </div>

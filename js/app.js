@@ -31,16 +31,23 @@ app.controller('AllAds', function($scope, $http){
 		//alert("OK");
 		console.log(data);
 		$scope.data = data;
+		$scope.numPages = data["numPages"];
+		
+
 	})
 	.error(function (data, status, headers, config) {
 		alert("Error");
 	});
 	
+	//used to generate pager like pass number of pages from data object
+	$scope.getNumber = function(num) {
+		return new Array(num);   
+	}
 	
-	$scope.rege = function(){
+	$scope.pager = function(page){
 		$http({ 
 			method: 'GET', 
-			url: 'http://softuni-ads.azurewebsites.net/api/Ads?StartPage=4&PageSize=5' 
+			url: 'http://softuni-ads.azurewebsites.net/api/Ads?StartPage=' + page + '&PageSize=5' 
 		})
 		.success(function (data, status, headers, config) {
 			alert("OK");
