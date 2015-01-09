@@ -1,26 +1,27 @@
-<div>
-	
-	<header class="all">
-		<h2 class="center">Ads Home</h2>
-	</header>
-	
-	{{ message }}
-	
-	<ul class="nav">
-				<li><a href="#/login">Login</a></li>
-				<li><a href="#/register">Register</a></li>
-				<li><a href="#" ng-click="rege()">Click</li>
-	</ul>
-	
+<div>	
+	<a href="#" ng-click="rege()">Click</a>
+
+
 	<ul>
-		<li ng-repeat="ad in data.ads" class="well">
-			<a href="#/ads/{{ad.id}}">
-				<h1>{{ad.title}}</h1>
-				<div><strong>Text:</strong> {{ad.text}}</div>
-				<div><strong>Town:</strong> {{ad.townName}}</div>
-				<div><strong>Category:</strong> {{ad.categoryName}}</div>
-				<div><strong>Status:</strong> {{ad.status}}</div>
-			</a>
-		</li>
+		<li ng-repeat="ad in data.ads">
+			<table class="all" width="100%">
+				<tr>
+					<td colspan="2">
+						<a href="#/ads/{{ad.id}}"><h2>{{ad.title}}</h2></a>{{ad.date | date:'dd-MMM-yyyy'}}
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<img ng-src="{{ad.imageDataUrl}}">
+					</td>
+					<td>
+						<div>{{ad.text}}</div>
+						<div><strong>Name:</strong> {{ad.ownerName}}</div>
+						<div><strong>Email:</strong> {{ad.ownerEmail}}</div>
+						<div><strong>Phone:</strong> {{ad.ownerPhone}}</div>
+					</td>
+				<tr>
+			</table>
+		</li>	
 	</ul>
 </div>

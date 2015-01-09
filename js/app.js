@@ -23,15 +23,13 @@ app.config(function($routeProvider){
 
 //Controllers
 app.controller('AllAds', function($scope, $http){
-	$scope.message = "Home Page";
-	
 	$http({ 
 		method: 'GET', 
-		url: 'http://softuni-ads.azurewebsites.net/api/Ads' 
+		url: 'http://softuni-ads.azurewebsites.net/api/Ads?PageSize=5' 
 	})
 	.success(function (data, status, headers, config) {
 		//alert("OK");
-		console.log(data["ads"]);
+		console.log(data);
 		$scope.data = data;
 	})
 	.error(function (data, status, headers, config) {
@@ -42,10 +40,11 @@ app.controller('AllAds', function($scope, $http){
 	$scope.rege = function(){
 		$http({ 
 			method: 'GET', 
-			url: 'http://softuni-ads.azurewebsites.net/api/Ads?StartPage=4' 
+			url: 'http://softuni-ads.azurewebsites.net/api/Ads?StartPage=4&PageSize=5' 
 		})
 		.success(function (data, status, headers, config) {
-			
+			alert("OK");
+			console.log(data);
 			$scope.data = data;
 		})
 		.error(function (data, status, headers, config) {

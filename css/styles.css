@@ -1,8 +1,52 @@
-
+*
+{
+	margin: 0px;
+	padding: 0px;
+}
+html{
+	background-color:#f3f3f3;
+}
+img{
+	padding:10px;
+	width:150px;
+}
+ul
+{
+    list-style-type: none;
+}
+table{
+	margin-bottom:10px;
+	width:55%;
+}
+footer{
+	clear:both;
+}
+.blabla{
+	width:960px;
+}
 .all{
 	border: 1px solid #000000;
+	background-color:#FFFFFF;
+	padding:10px;
+	margin:10px;
 }
-
+.leftCol{
+	float:left;
+	width:21%;
+	
+}
+.mainCol{
+	float:left;
+	margin-left:190px;
+	margin-top:-95px;
+	width:100%;
+	
+}
+.rightCol{
+	float:right;
+	width:21%;
+	margin-right:-35px;
+}
 .center{
 	text-align: center;
 }
